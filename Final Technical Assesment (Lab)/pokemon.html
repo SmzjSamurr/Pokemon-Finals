@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pokemon Battle</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    text-align: center;
+    margin-top: 20%;
+  }
+  h1 {
+    font-size: 10em;
+    color: red; 
+  }
+
+  h2 {
+    font-size: 2cm;
+    color: black; 
+  }
+  p {
+    font-size: 1.2em;
+    color: black; 
+  }
+  #pokemonImage {
+    display: none; 
+    width: 50%; 
+    max-width: 400px;
+    margin-left: auto;
+margin-right: auto;
+  }
+  #pokemonImage2 {
+    display: none; 
+    width: 50%; 
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  img.animated-gif{
+width: 900px;
+height: auto;
+}
+
+
+
+</style>
+</head>
+<body>
+  <h1>Pokemon Battle</h1>
+  
+  <img src="pokecomm.jpg" alt="Pokemon Battle Image" style="width: 50%; max-width: 400px;">
+  <p>Next Fight is Samuel VS Enzo</p>
+
+  <button onclick="startBattle()">THROW POKEBALL</button>
+  <img id="pokemonImage" src="arceus.jpg" alt="Arceus Image">
+  <p id="pokemonText">Samuel: Arceus I choose you!</p>
+
+  <button onclick="startBattle2()">THROW POKEBALL</button>
+  <img id="pokemonImage2" src="zubat.jpg" alt="Zubat Image">
+  <p id="pokemonText2">Enzo: Zubat I choose you!</p>
+
+  <img id="zubat" src="zubat2.jpg" alt="Zubat2">
+  <p> Enzo: Zubat use</p>
+
+  <img class="animated-gif" id="arceus"src="arceus2.gif" alt="Arceus2">
+  <p>Samuel: Dodge it!!!!</p>
+
+  <img src="arceus3.jpg" alt="Arceus3">
+  <h2>
+  <p id="text" onmouseover="changeColor()">Attack Arceus!!</p>
+</h2>
+
+<div>
+  <img id="myImage" src="zubat3.jpg" width="500" height="500" alt="Zubat">
+  <input type="button" onclick="changeImage()" value="ZUBAT IS DOWN">
+
+</div>
+<div>
+  <img src="enzo.jpg" alt="Enzo">
+</div>
+
+<button id="button" onclick="insertElement()">Dang It Button</button>
+
+
+
+
+<script>
+  function startBattle() {
+    var image = document.getElementById("pokemonImage");
+    var text = document.getElementById("pokemonText");
+    image.style.display = "block"; 
+    text.style.display = "block"; 
+  }
+
+  function startBattle2() {
+    var image = document.getElementById("pokemonImage2");
+    var text = document.getElementById("pokemonText2");
+    image.style.display = "block"; 
+    text.style.display = "block"; 
+  }
+
+  function changeColor() {
+  var colors = ["red", "blue", "green"];
+  var randomColor = colors[Math.floor(Math.random() * colors.length)];
+  var paragraph = document.getElementById("text");
+  paragraph.style.color = randomColor;
+}
+
+function changeImage() {
+    document.getElementById('myImage').src = "zubat4.jpg";
+}
+
+function insertElement() {
+    let newDiv = document.createElement('div');
+    let newContent = document.createTextNode('Enzo: Dang it!');
+    newDiv.appendChild(newContent);
+
+    let currentDiv = document.getElementById('main');
+    document.body.insertBefore(newDiv, currentDiv);
+}
+</script>
+</body>
+</html>
